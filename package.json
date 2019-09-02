@@ -1,0 +1,23 @@
+{
+  "name": "floatingpoints",
+  "version": "1.0.0",
+  "description": "A Coding Game",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/fisch03/floatingpoints",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "Fisch03",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^6.0.6"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,15 @@
+@font-face {
+    font-family: "iAWriterQuattro";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(iAWriterQuattroS-Regular.woff2);
+}
+
+@font-face {
+    font-family: "iAWriterQuattroBold";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(iAWriterQuattroS-Bold.woff2);
+}
