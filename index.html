@@ -3,28 +3,38 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="./style.css">
-    <script src="./index.js"></script>
     <title>floatingpoints</title>
   </head>
   <body>
     <div id="pagecontainer" class="perspective">
+
+      <!--MAIN MENU-->
       <div class="page pagecurrent" id="mainpage">
         <h1>floatingpoints<div class="reactive"><div class="hovering">&#729;</div></div></h1>
         <h2>A Coding Game</h2>
 
         <div class="menu"><ul>
-          <li onclick="startGame();" id="start"><a href="#start">Start</a></li>
-          <li onclick="openSettings();" id="settings"><a href="#settings">Settings</a></li>
-          <li onclick="quitGame();" id="quit"><a href="#quit">Quit</a></li>
+          <a href="#start"><li onclick="startGame();" id="start">Start</li></a>
+          <a href="#settings"><li onclick="openSettings();" id="settings">Settings</li></a>
+          <a href="#quit"><li onclick="quitGame();" id="quit">Quit</li></a>
         </ul></div>
       </div>
+
+      <!--SETTINGS-->
       <div class="page" id="settingspage">
         <h1>Settings</h1>
 
         <div class="menu"><ul>
-          <li onclick="mainMenu();" id="back"><a href="#back">Quit</a></li>
+          <li onclick="resize();" id="resize">Change Window Size: <span id="restext"></span></li>
+          <a href="#back"><li onclick="mainMenu();" id="back">Back</li></a>
         </ul></div>
       </div>
+
+      <!--BLANK PAGE-->
+      <div class="page" id="blankpage">
+      </div>
+
+      <script src="./renderer.js"></script>
     </div>
   </body>
 </html>
