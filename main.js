@@ -13,11 +13,13 @@ function createWindow () {
     height: 720,
     resizable: false,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.js'),
+      nodeIntegration: true
+      //devTools: false
     }
   })
 
-  // and load the index.html of the app.
+  // and load the mainmenu.html of the app.
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.

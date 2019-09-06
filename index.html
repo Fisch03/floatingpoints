@@ -3,17 +3,28 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="./index.js"></script>
     <title>floatingpoints</title>
   </head>
   <body>
-    <h1>floatingpoints<div class="reactive"><div class="hovering">&#729;</div></div></h1>
-    <h2>A Coding Game</h2>
+    <div id="pagecontainer" class="perspective">
+      <div class="page pagecurrent" id="mainpage">
+        <h1>floatingpoints<div class="reactive"><div class="hovering">&#729;</div></div></h1>
+        <h2>A Coding Game</h2>
 
-    <ul>
-      <li>Start</li>
-      <li>Settings</li>
-    </ul>
+        <div class="menu"><ul>
+          <li onclick="startGame();" id="start"><a href="#start">Start</a></li>
+          <li onclick="openSettings();" id="settings"><a href="#settings">Settings</a></li>
+          <li onclick="quitGame();" id="quit"><a href="#quit">Quit</a></li>
+        </ul></div>
+      </div>
+      <div class="page" id="settingspage">
+        <h1>Settings</h1>
 
-    <script src="./renderer.js"></script>
+        <div class="menu"><ul>
+          <li onclick="mainMenu();" id="back"><a href="#back">Quit</a></li>
+        </ul></div>
+      </div>
+    </div>
   </body>
 </html>
