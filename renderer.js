@@ -1,9 +1,11 @@
 const remote = require("electron").remote;
 const {ipcRenderer} = require("electron");
 
-var currentpage = "mainpage";
+let currentpage = "mainpage";
 
-var availableResolutions = [
+//List of available Resolutions
+let availableResolutions = [
+  ["Fullscreen"],
   [1280, 720],
   [1366, 768],
   [1920, 1080],
@@ -11,23 +13,27 @@ var availableResolutions = [
   [1280, 960],
   [1600, 1200]
 ];
-var currentresid = 0;
+let currentresid = 1;
 document.getElementById("restext").textContent = availableResolutions[currentresid][0] + "x" + availableResolutions[currentresid][1]
 
+//Functions called by Buttons on the Page
+function startGame() {
+  pageTransition("blankpage");
+  setTimeout(function(){window.location.href = "./game.html"}, 800);
+}
 function quitGame() {
   pageTransition("blankpage");
-  var window = remote.getCurrentWindow();
-  setTimeout(function(){window.close();}, 800);
+  let electronWindow = remote.getCurrentWindow();
+  setTimeout(function(){electronWindow.close();}, 800);
 }
-
 function openSettings() {
   pageTransition("settingspage");
 }
-
 function mainMenu() {
   pageTransition("mainpage");
 }
 
+//Go to the next available Resolution and apply it
 function resize() {
   currentresid++;
   if (currentresid >= availableResolutions.length) {
@@ -42,12 +48,13 @@ function resize() {
   }
 }
 
+//Transition to the target page with an animation
 function pageTransition(target) {
-  var targetpage = target;
+  let targetpage = target;
   setTimeout(
     function() {
-      var outpage = document.getElementById(currentpage);
-      var inpage = document.getElementById(targetpage);
+      let outpage = document.getElementById(currentpage);
+      let inpage = document.getElementById(targetpage);
 
       currentpage = targetpage;
 

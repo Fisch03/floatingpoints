@@ -1,8 +1,7 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow, ipcMain} = require('electron')
 const path = require('path')
-
-var screensize;
+const electron = require('electron')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -34,11 +33,6 @@ function createWindow () {
     // when you should delete the corresponding element.
     mainWindow = null
   })
-
-  const electron = require('electron')
-  screenElectron = electron.screen
-
-  screensize = [screenElectron.getPrimaryDisplay().size.width, screenElectron.getPrimaryDisplay().size.height]
 }
 
 // This method will be called when Electron has finished
@@ -60,8 +54,7 @@ app.on('activate', function () {
 })
 
 ipcMain.on('fullscreen', (event, flag) => {
-  if (flag)
-    mainWindow.setContentSize(screensize[0], screensize[1])
+  mainWindow.setResizable(flag) //Make the Window resizable so it can scale to the current Screen
   mainWindow.setFullScreen(flag)
 })
 
