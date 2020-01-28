@@ -20,6 +20,9 @@ function createWindow () {
       //devTools: false
     }
   })
+  
+  // Remove the menu bar
+  mainWindow.setMenu(null)
 
   // and load the mainmenu.html of the app.
   mainWindow.loadFile('index.html')
