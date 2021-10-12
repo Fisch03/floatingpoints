@@ -15,7 +15,7 @@
   "author": "Fisch03",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^6.0.6"
+    "electron": "^11.5.0"
   },
   "dependencies": {
     "npm": "^6.13.4"
